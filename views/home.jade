@@ -1,0 +1,47 @@
+!!! 5
+html(lang="en")
+  head
+    title Users
+
+
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    - if (typeof(flash) != 'undefined')
+      p(class='error')= flash
+    - if (typeof(flash1) != 'undefined')
+      p(class='success')= flash1
+
+    div(class='wrapper')
+      h1(class='demo-title') Simple login form using NodeJS
+      div(class='container')
+        div(class='login-container')
+          h2 Login
+          form(method='post', action='/login')
+            label(class='label') Username:
+            input(name='username', type='text')
+            br
+            br
+            label(class='label') Password:
+            input(name='password', type='password')
+            br
+            br 
+            button(type='submit', class='floatright login-button') Login
+            div(class='clear')
+        div(class='register-container')
+          h2 Register
+          form(method='post', action='/register')
+            label(class='label') Username:
+            input(name='username', type='text')
+            br
+            br
+            label(class='label') Password:
+            input(name='password', type='password')
+            br
+            br
+            label(class='label') Confirm Password:
+            input(name='confirm_password', type='password')
+            br
+            br
+            button(type='submit', class='floatright create-account') Register
+            div(class='clear')
+        div(class='clear')
